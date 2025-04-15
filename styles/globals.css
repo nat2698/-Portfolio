@@ -19,8 +19,39 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+body::before {
+  background-color: #000;
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(#ffffff 1px, transparent 1px),
+            radial-gradient(#ffffff 1px, transparent 1px);
+  background-size: 100px 100px, 150px 150px;
+  background-position: 0 0, 50px 50px;
+  z-index: -1;
+  animation: starMove 60s linear infinite;
+  opacity: 0.2;
+}
+@layer utilities {
+  .shape-circle {
+    shape-outside: circle();
+    clip-path: circle();
+    -webkit-shape-outside: circle();
+    -webkit-clip-path: circle();
+  }
+  .animate-floaty {
+    animation: floaty 10s infinite linear;
+  }
+}
+
+@keyframes starMove {
+  from {
+    background-position: 0 0, 50px 50px;
+  }
+  to {
+    background-position: -1000px 1000px, -1500px 1500px;
+  }
 }

@@ -1,113 +1,119 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
+// import Image from "next/image";
+// import { Geist, Geist_Mono } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import AboutMe from "@/components/AboutMe";
+import PageLayout from "@/layouts/PageLayout";
+import { useRef } from "react";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export default function Home() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const { left, top } = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - left;
+    const y = e.clientY - top;
+
+    if (ref.current) {
+      ref.current.style.setProperty("--x", `${x}px`);
+      ref.current.style.setProperty("--y", `${y}px`);
+    }
+  };
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              pages/index.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <PageLayout>
+      <div className="min-h-screen  bg-[#08070f] text-white flex items-center bg-opacity-50 justify-center pb-20">
+        <div className="max-w-[1100px] w-full ">
+          <div className="pt-20">
+            <section id="about">
+              <AboutMe />
+            </section>
+            <section
+              id="projects"
+              className="h-screen flex items-center justify-center"
+            >
+              <h1 className="text-4xl font-bold">My Projects</h1>
+            </section>
+            <section
+              id="contact"
+              className="h-screen flex items-center justify-center"
+            >
+              <h1 className="text-4xl font-bold">Contact Me</h1>
+            </section>
+          </div>
+          <div className="relative flex items-center justify-center min-h-screen bg-black">
+            <div
+              ref={ref}
+              onMouseMove={handleMouseMove}
+              className="group relative w-[720px] rounded-xl p-[2px] transition-all"
+              style={
+                {
+                  "--x": "50%",
+                  "--y": "50%",
+                } as React.CSSProperties
+              }
+            >
+              <div className="absolute inset-0 rounded-xl z-10 pointer-events-none">
+                <div
+                  className="w-full h-full rounded-xl"
+                  style={{
+                    background: `
+                radial-gradient(
+                  120px at var(--x) var(--y),
+                  rgba(236, 72, 153, 0.9),
+                  rgba(139, 92, 246, 0.7),
+                  rgba(14, 165, 233, 0.5),
+                  transparent 80%
+                )
+              `,
+                    maskImage:
+                      "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
+                    WebkitMaskImage:
+                      "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
+                    maskComposite: "exclude",
+                    WebkitMaskComposite: "xor",
+                    padding: "2px",
+                    borderRadius: "0.75rem",
+                  }}
+                />
+              </div>
+
+              <div
+                className="absolute inset-0 z-0 rounded-xl pointer-events-none"
+                style={{
+                  background: `radial-gradient(400px at var(--x) var(--y), rgba(236,72,153,0.2), rgba(139,92,246,0.15), transparent)`,
+                  filter: "blur(60px)",
+                  opacity: 1,
+                }}
+              />
+
+              <div className="relative z-20 rounded-xl bg-[#0f172a] p-6 text-white backdrop-blur">
+                <div className="text-sm text-cyan-400 text-right">
+                  May 2022 - Feb 2024
+                </div>
+                <h3 className="text-pink-500 text-xl font-semibold mt-2">
+                  Senior React Developer
+                </h3>
+                <p className="text-white font-bold">Getaround</p>
+                <p className="text-slate-300 mt-3 text-sm leading-relaxed">
+                  I led the development of new product features from start to
+                  finish, including research, documentation, refinement and
+                  more.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </PageLayout>
   );
 }
