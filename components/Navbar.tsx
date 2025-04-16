@@ -1,3 +1,4 @@
+import items from "@/utils/items";
 import clsx from "clsx";
 import React, { useEffect, useState } from "react";
 import { JSX } from "react/jsx-runtime";
@@ -26,39 +27,17 @@ export default function Navbar(): JSX.Element {
         scrolled ? "bg-[#24243e]/10 backdrop-blur shadow-sm" : "bg-transparent"
       )}
     >
-      <div className="max-w-[1100px] mx-auto px-4 py-3 flex justify-between items-center">
-        <div className="text-xl font-bold">Mi Portafolio</div>
+      <div className="max-w-[1100px] mx-auto px-4 py-3 flex justify-end items-center">
         <ul className="flex gap-6 text-sm font-medium">
-          <li
-            className="cursor-pointer hover:text-purple-600"
-            onClick={() => scrollToSection("about")}
-          >
-            Acerca de mi
-          </li>
-          <li
-            className="cursor-pointer hover:text-purple-600"
-            onClick={() => scrollToSection("projects")}
-          >
-            Experiencia
-          </li>
-          <li
-            className="cursor-pointer hover:text-purple-600"
-            onClick={() => scrollToSection("contact")}
-          >
-            Habilidades
-          </li>
-          <li
-            className="cursor-pointer hover:text-purple-600"
-            onClick={() => scrollToSection("contact")}
-          >
-            Proyectos
-          </li>
-          <li
-            className="cursor-pointer hover:text-purple-600"
-            onClick={() => scrollToSection("contact")}
-          >
-            Contacto
-          </li>
+          {items.map((item, index) => (
+            <li
+              key={index}
+              className="cursor-pointer hover:text-[#EC4899] transition-all duration-200"
+              onClick={() => scrollToSection(item.id)}
+            >
+              {item.name}
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
