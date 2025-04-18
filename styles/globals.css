@@ -45,6 +45,15 @@ body::before {
   .animate-floaty {
     animation: floaty 10s infinite linear;
   }
+  .animate-marquee {
+    display: flex;
+  width: max-content;
+    animation: marquee 20s linear infinite;
+  }
+  .marquee-wrapper {
+    overflow: hidden;
+    width: 100%;
+  }
 }
 
 @keyframes starMove {
@@ -53,5 +62,14 @@ body::before {
   }
   to {
     background-position: -1000px 1000px, -1500px 1500px;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }

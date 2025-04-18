@@ -10,7 +10,7 @@ export default function AboutMe(): JSX.Element {
   }, []);
   return (
     <section
-      className="flex justify-center items-center w-full mt-10 h-[80vh] relative px-5 lg:px-0"
+      className="flex justify-center items-center w-full mt-10 lg:h-[80vh] relative px-5 lg:px-0"
       data-aos="fade-up"
       id="about"
     >
@@ -19,7 +19,7 @@ export default function AboutMe(): JSX.Element {
         src={bg}
         width={1500}
         height={500}
-        className="w-full h-[700px] object-cover absolute top-[-120px] "
+        className="w-full lg:h-[700px] object-cover absolute top-[-120px] "
       />
       <div className="w-full max-w-2xl z-10 bg-opacity-10">
         <div className="lg:w-52 lg:h-52 w-32 h-32 rounded-full overflow-hidden shape-circle float-right ml-6 mb-4">
@@ -28,7 +28,7 @@ export default function AboutMe(): JSX.Element {
             src={photo}
             width={500}
             height={500}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover  grayscale brightness-110 contrast-125 mix-blend-screen"
           />
         </div>
         <div className="lg:border-l-2 border-cyan-400 lg:pl-5">

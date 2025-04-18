@@ -3,6 +3,7 @@
 
 import AboutMe from "@/components/AboutMe";
 import Experience from "@/components/Experience";
+import Skills from "@/components/Skills";
 import PageLayout from "@/layouts/PageLayout";
 
 // const geistSans = Geist({
@@ -23,12 +24,15 @@ export default function Home() {
           <div className="pt-20">
             <AboutMe />
             <Experience />
+            <Skills />
+
             <section
               id="projects"
               className="h-screen flex items-center justify-center"
             >
               <h1 className="text-4xl font-bold">My Projects</h1>
             </section>
+
             <section
               id="contact"
               className="h-screen flex items-center justify-center"
