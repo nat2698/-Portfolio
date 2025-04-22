@@ -28,7 +28,7 @@ body::before {
   width: 100%;
   height: 100%;
   background: radial-gradient(#ffffff 1px, transparent 1px),
-            radial-gradient(#ffffff 1px, transparent 1px);
+    radial-gradient(#ffffff 1px, transparent 1px);
   background-size: 100px 100px, 150px 150px;
   background-position: 0 0, 50px 50px;
   z-index: -1;
@@ -47,29 +47,56 @@ body::before {
   }
   .animate-marquee {
     display: flex;
-  width: max-content;
+    width: max-content;
     animation: marquee 20s linear infinite;
   }
   .marquee-wrapper {
     overflow: hidden;
     width: 100%;
   }
-}
+  .borde-animado {
+    position: relative;
+    border-left: 2px solid #22d3ee;
+    padding-left: 1.25rem;
+  }
+  .borde-animado::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 4px;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, #22d3ee, transparent);
+    animation: recorrerBorde 2s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
 
-@keyframes starMove {
-  from {
-    background-position: 0 0, 50px 50px;
+  @keyframes starMove {
+    from {
+      background-position: 0 0, 50px 50px;
+    }
+    to {
+      background-position: -1000px 1000px, -1500px 1500px;
+    }
   }
-  to {
-    background-position: -1000px 1000px, -1500px 1500px;
-  }
-}
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
-  100% {
-    transform: translateX(-50%);
+
+  @keyframes recorrerBorde {
+    0% {
+      top: -150%;
+    }
+    100% {
+      top: 100%;
+    }
   }
 }

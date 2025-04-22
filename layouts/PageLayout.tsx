@@ -6,7 +6,7 @@ interface Props {
 }
 
 export default function PageLayout({ children }: Props): JSX.Element {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>

@@ -19,7 +19,7 @@ export default function Aside({ setIsOpen, isOpen }: Props): JSX.Element {
   };
 
   return (
-    <>
+    <div className="flex md:hidden">
       <div
         className={`fixed inset-0 bg-black bg-opacity-0 transition-opacity duration-300 z-40 ${
           isOpen
@@ -60,6 +60,6 @@ export default function Aside({ setIsOpen, isOpen }: Props): JSX.Element {
           </ul>
         </nav>
       </aside>
-    </>
+    </div>
   );
 }
