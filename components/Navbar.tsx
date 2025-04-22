@@ -28,7 +28,7 @@ export default function Navbar({ setIsOpen, isOpen }: Props): JSX.Element {
     <nav
       className={clsx(
         "fixed top-0 left-0 w-full text-white shadow z-50 transition-all duration-300",
-        scrolled ? "bg-[#24243e]/10 backdrop-blur shadow-sm" : "bg-transparent"
+        scrolled ? "bg-[#24243e]/50 backdrop-blur shadow-sm" : "bg-transparent"
       )}
     >
       <div className={clsx("flex md:hidden", isOpen && "hidden")}>
@@ -39,7 +39,7 @@ export default function Navbar({ setIsOpen, isOpen }: Props): JSX.Element {
           <IoMdMenu size={24} className="text-[#EC4899]" />
         </button>
       </div>
-      <div className="hidden md:flex max-w-[1100px] mx-auto px-4 py-3 justify-end items-center">
+      <div className="hidden md:flex max-w-[1100px] mx-auto px-4 py-3 justify-center items-center">
         <ul className="flex gap-6 text-sm font-medium">
           {items.map((item, index) => (
             <li

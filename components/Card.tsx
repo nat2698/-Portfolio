@@ -86,7 +86,7 @@ export default function Card({
           <span className="font-semibold md:text-md text-sm">{company}</span>
           <div
             className={clsx(
-              "transition-all duration-400 ease-in-out  mt-2 flex flex-col gap-2",
+              "transition-all duration-400 ease-in-out overflow-hidden mt-2 flex flex-col gap-2",
               show ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
             )}
           >

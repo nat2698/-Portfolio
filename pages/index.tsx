@@ -3,6 +3,7 @@
 
 import AboutMe from "@/components/AboutMe";
 import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import PageLayout from "@/layouts/PageLayout";
 
@@ -25,14 +26,7 @@ export default function Home() {
             <AboutMe />
             <Experience />
             <Skills />
-
-            <section
-              id="projects"
-              className="h-screen flex items-center justify-center"
-            >
-              <h1 className="text-4xl font-bold">My Projects</h1>
-            </section>
-
+            <Projects />
             <section
               id="contact"
               className="h-screen flex items-center justify-center"

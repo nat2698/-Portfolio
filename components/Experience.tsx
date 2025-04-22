@@ -9,30 +9,32 @@ export default function Experience(): JSX.Element {
     <section
       data-aos="fade-up"
       id="experience"
-      className="relative flex items-center px-5 lg:px-0 py-20 flex-col overflow-hidden"
+      className="px-5 h-full lg:px-0 py-20 flex-col overflow-hidden"
     >
-      <div className="h-px mb-10 w-full bg-gradient-to-r from-transparent via-purple-500 to-transparent" />
+      <div className="h-px  w-full bg-gradient-to-r from-transparent via-purple-500 to-transparent" />
       <Image
         alt="bg"
         src={bg}
         width={800}
         height={500}
-        className="w-full h-[350px]  opacity-60 object-cover absolute"
+        className="w-[800px] h-[350px]  opacity-60 object-cover absolute"
       />
-      <h2 className="text-[#EC4899] font-semibold text-2xl md:text-3xl mt-10">
-        Experiencia
-      </h2>
-      <div className="w-full lg:w-[900px] flex md:flex-row flex-col gap-8 md:mt-20 mt-7">
-        {experienceCard.map((exp, index) => (
-          <div key={index} className="lg:w-1/2 w-full">
-            <Card
-              date={exp.date ?? ""}
-              charge={exp.charge ?? ""}
-              company={exp.company ?? ""}
-              content={exp.content ?? []}
-            />
-          </div>
-        ))}
+      <div className=" flex items-center justify-center  flex-col ">
+        <h2 className="text-[#EC4899] font-semibold text-2xl md:text-3xl mt-30">
+          Experiencia
+        </h2>
+        <div className="w-full lg:w-[900px] flex md:flex-row flex-col gap-8 md:mt-20 mt-7">
+          {experienceCard.map((exp, index) => (
+            <div key={index} className="lg:w-1/2 w-full">
+              <Card
+                date={exp.date ?? ""}
+                charge={exp.charge ?? ""}
+                company={exp.company ?? ""}
+                content={exp.content ?? []}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -50,9 +50,11 @@ body::before {
     width: max-content;
     animation: marquee 20s linear infinite;
   }
+  .marquee-wrapper:hover .animate-marquee {
+    animation-play-state: paused;
+  }
   .marquee-wrapper {
     overflow: hidden;
-    width: 100%;
   }
   .borde-animado {
     position: relative;

@@ -10,7 +10,7 @@ export default function AboutMe(): JSX.Element {
   }, []);
   return (
     <section
-      className="flex justify-center items-center w-full mt-10 lg:h-[80vh] relative px-5 lg:px-0"
+      className="flex justify-center items-center w-full mt-10 lg:h-[70vh] relative px-5 lg:px-0"
       data-aos="fade-up"
       id="about"
     >
@@ -35,13 +35,13 @@ export default function AboutMe(): JSX.Element {
           <h2 className="md:text-3xl text-2xl text-[#EC4899] font-semibold mb-2">
             Acerca de mí
           </h2>
-          <p className="lg:text-md text-[12px] mb-3">
+          <p className="md:text-sm text-[12px] mb-3">
             Desarrolladora frontend con más de 2 años de experiencia en HTML,
             CSS, JavaScript, React.js, Next.js, TypeScript, Material-UI,
             Tailwind. Interesada en el desarrollo web y en mantener soluciones
             con una excelente experiencia de usuario.
           </p>
-          <p className="lg:text-md text-[12px]">
+          <p className="text-[12px] md:text-sm">
             Orientada a resultados, con habilidades para el trabajo en equipo,
             aprendizaje rápido y continuo, autonomía, resolución de problemas y
             organización. Responsable, disciplinada y con una actitud positiva.
