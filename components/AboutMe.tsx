@@ -19,6 +19,7 @@ export default function AboutMe(): JSX.Element {
         src={bg}
         width={1500}
         height={500}
+        loading="lazy"
         className="w-full lg:h-[700px] object-cover absolute top-[-120px] "
       />
       <div className="w-full max-w-2xl z-10 bg-opacity-10">
@@ -28,7 +29,9 @@ export default function AboutMe(): JSX.Element {
             src={photo}
             width={500}
             height={500}
-            className="w-full h-full object-cover  grayscale brightness-110 contrast-125 mix-blend-screen"
+            priority={false}
+            loading="lazy"
+            className="w-full h-full object-cover grayscale brightness-110 contrast-125 mix-blend-screen"
           />
         </div>
         <div className="borde-animado md:overflow-y-hidden">

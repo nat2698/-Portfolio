@@ -17,6 +17,7 @@ export default function Experience(): JSX.Element {
         src={bg}
         width={800}
         height={500}
+        loading="lazy"
         className="w-[800px] h-[350px]  opacity-60 object-cover absolute"
       />
       <div className=" flex items-center justify-center  flex-col ">

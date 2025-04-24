@@ -28,11 +28,13 @@ export default function Navbar({ setIsOpen, isOpen }: Props): JSX.Element {
     <nav
       className={clsx(
         "fixed top-0 left-0 w-full text-white shadow z-50 transition-all duration-300",
-        scrolled ? "bg-[#24243e]/50 backdrop-blur shadow-sm" : "bg-transparent"
+        scrolled ? "bg-[#24243e]/40 backdrop-blur shadow-sm" : "bg-transparent"
       )}
     >
       <div className={clsx("flex md:hidden", isOpen && "hidden")}>
         <button
+          aria-label="Abrir menú"
+          title="Abrir menú"
           onClick={() => setIsOpen(!isOpen)}
           className="fixed top-4 left-4 z-50 p-1 cursor-pointer bg-[#24243e]   hover:scale-110  rounded-md shadow-md focus:outline-none"
         >

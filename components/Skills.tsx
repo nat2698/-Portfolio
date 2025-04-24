@@ -16,6 +16,7 @@ export default function Skills(): JSX.Element {
         src={bg}
         width={800}
         height={500}
+        loading="lazy"
         className="w-full h-[350px]  opacity-60 object-cover absolute  "
       />
       <div className="h-full flex items-center flex-col justify-center">
