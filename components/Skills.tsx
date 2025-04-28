@@ -8,7 +8,7 @@ export default function Skills(): JSX.Element {
     <section
       data-aos="fade-up"
       id="skills"
-      className="h-[100vh] flex  items-center px-5 lg:px-0 py-20 flex-col"
+      className="h-[100vh] flex items-center px-5 lg:px-0 py-20 flex-col"
     >
       <div className="h-px mb-10 w-full bg-gradient-to-r from-transparent via-purple-500 to-transparent" />
       <Image
@@ -17,9 +17,9 @@ export default function Skills(): JSX.Element {
         width={800}
         height={500}
         loading="lazy"
-        className="w-full h-[350px]  opacity-60 object-cover absolute  "
+        className="w-full h-[350px]  opacity-60 object-cover absolute"
       />
-      <div className="h-full flex items-center flex-col justify-center">
+      <div className="h-full flex items-center flex-col justify-center w-[90%] lg:w-full overflow-hidden">
         <h2 className="text-[#EC4899] font-bold text-2xl mt-10 mb-20">
           Habilidades
         </h2>

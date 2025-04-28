@@ -28,7 +28,7 @@ import Image from "next/image";
 
 export default function SkillsSlider(): JSX.Element {
   return (
-    <div className="marquee-wrapper lg:w-[900px] w-[300px] py-6">
+    <div className="marquee-wrapper w-full lg:w-[900px] py-6 overflow-x-hidden">
       <div className="animate-marquee gap-6">
         {[...skills, ...skills].map((item, i) => (
           <div
