@@ -20,7 +20,7 @@ export default function AboutMe(): JSX.Element {
         width={1500}
         height={500}
         loading="lazy"
-        className="w-full lg:h-[700px] object-cover absolute top-[-120px] "
+        className="w-full lg:h-[400px] object-cover absolute top-[-120px] "
       />
       <div className="w-full max-w-2xl z-10 bg-opacity-10">
         <div className="lg:w-52 lg:h-52 w-32 h-32 rounded-full overflow-hidden shape-circle float-right ml-6 mb-4">

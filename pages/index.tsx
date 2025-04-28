@@ -3,6 +3,7 @@
 
 import AboutMe from "@/components/AboutMe";
 import Experience from "@/components/Experience";
+import Main from "@/components/Main";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import PageLayout from "@/layouts/PageLayout";
@@ -22,7 +23,8 @@ export default function Home() {
     <PageLayout>
       <div className="min-h-screen bg-[#0b0b25] text-white flex items-center bg-opacity-50 justify-center pb-20">
         <div className="max-w-[1100px] w-full">
-          <div className="pt-20">
+          <div className="">
+            <Main />
             <AboutMe />
             <Experience />
             <Skills />
