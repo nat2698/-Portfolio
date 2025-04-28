@@ -43,7 +43,7 @@ export default function Main(): JSX.Element {
         <h1 className="text-3xl font-bold text-white">
           Hola, <span className="text-[#EC4899]">Soy Natalia Salazar</span>
         </h1>
-        <span className="font-medium text-cyan-400">
+        <span className="font-semibold inline-flex animate-background-shine bg-[linear-gradient(110deg,#22d3ee,45%,#0f172a,55%,#22d3ee)] dark:bg-[linear-gradient(110deg,#b6eaff,45%,#065074,55%,#b6eaff)] bg-[length:250%_100%] bg-clip-text text-xl text-transparent">
           Desarrolladora Frontend
         </span>
 

@@ -73,8 +73,19 @@ body::before {
     z-index: 1;
     pointer-events: none;
   }
-  
+  @keyframes background-shine {
+  0% {
+    background-position: 0% 50%; 
+  }
+  100% {
+    background-position: 100% 40%;
+  }
+}
 
+.animate-background-shine {
+  animation: background-shine 3s ease-in-out infinite;
+}
+  
   @keyframes starMove {
     from {
       background-position: 0 0, 50px 50px;
